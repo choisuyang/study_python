@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>images/pattern.png</file>
+    <file>images/setting.png</file>
+    <file>images/border.png</file>
+  </qresource>
+</RCC>

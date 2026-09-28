@@ -1,0 +1,12 @@
+<RCC>
+  <qresource prefix="icon">
+    <file>images/a.png</file>
+    <file>images/b.png</file>
+    <file>images/c.png</file>
+    <file>images/d.png</file>
+    <file>images/e.png</file>
+    <file>images/f.png</file>
+    <file>images/g.png</file>
+    <file>images/h.png</file>
+  </qresource>
+</RCC>
