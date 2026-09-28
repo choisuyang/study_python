@@ -18,6 +18,8 @@ class Form(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
 
         # 시그널/슬롯 연결
+        self.pushButton.clicked.connect(self.print_hello)
+        self.pushButton_2.clicked.connect(self.print_world)
 
     def print_hello(self):
         self.lblMsg.setText("Hello")
