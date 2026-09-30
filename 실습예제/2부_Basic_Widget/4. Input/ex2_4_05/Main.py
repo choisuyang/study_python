@@ -24,6 +24,8 @@ class Form(QMainWindow, Ui_MainWindow):
         font.setItalic(self.chkItalic.isChecked())
         self.lblEng.setFont(font)
         self.lblKor.setFont(font)
+        self.lblEng.adjustSize()
+        self.lblKor.adjustSize()
 
 
 if __name__ == '__main__':

@@ -31,6 +31,7 @@ class Form(QMainWindow, Ui_MainWindow):
             if not wid.hasAcceptableInput():
                 self.lblError.setText(f'{item[i]}항목 오류입니다.')
                 wid.setFocus()
+                
                 break
         else:
             self.lblError.setText('모두 정상입니다.')
