@@ -20,10 +20,19 @@ class Form(QMainWindow , Ui_MainWindow):
 
         self.btnOK.clicked.connect(self.btnOK_Click)
         # Todo : radio 버튼의 시그널 슬롯 연결
+        self.grpYear.buttonClicked.connect(self.funcYear)
+        self.grpGender.buttonClicked.connect(self.funcGender)
+
 
 
     def btnOK_Click(self):
         self.lblMsg.setText('{} {} 입니다.'.format(self.year, self.gender))
+
+    def funcYear(self, radio):
+        self.year = radio.text()
+
+    def funcGender(self, radio):
+        self.gender = radio.text()
 
 
 if __name__ == '__main__':

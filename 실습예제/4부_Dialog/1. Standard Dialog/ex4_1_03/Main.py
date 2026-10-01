@@ -35,6 +35,9 @@ class Form(QMainWindow, Ui_MainWindow):
         self.btnQuestion_2.clicked.connect(self.showQuestionMsg)
         self.btnWarning_2.clicked.connect(self.showWarningMsg)
 
+    def func(self):
+        QMessageBox.critical(self,"타이틀", "텍스트") 
+
     def question(self):
         r = QMessageBox.question(self, 'question', 'question message', QMessageBox.Yes | QMessageBox.No)
         print(r)
@@ -45,7 +48,7 @@ class Form(QMainWindow, Ui_MainWindow):
 
     def showCirticalMsg(self):
         # property-based API를 이용하여 작성
-        pass
+        self.addButton()
 
     def showInfoMsg(self):
         # property-based API를 이용하여 작성

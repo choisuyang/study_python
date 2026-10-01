@@ -11,15 +11,20 @@ subprocess.run([
 ])
 from gui import Ui_MainWindow
 
+def func():
+    pass
 
 class Form(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
 
+    def func(self):
+        pass
+    
 
 if __name__ == '__main__':
     app = QApplication(sys.argv)
-    w = Form()
+    w = Form() 
     w.show()
     sys.exit(app.exec_())

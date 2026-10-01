@@ -22,8 +22,17 @@ class Form(QMainWindow, Ui_MainWindow):
         self.btnOK.clicked.connect(self.btnOK_Click)
 
     def btnOK_Click(self):
+        obj = self.findChildren(QCheckBox)
+        l = []
+        for chk in obj:
+            if chk.isChecked():
+                l.append(chk.text())
+        if l:
+            self.lblMsg.setText(f'나는 {",".join(l)}언어 사용 가능')
+        else:
+            self.lblMsg.setText('나는 사용 할수 있는 언어 없음')
 
-        # todo : 코드를 구현하라
+        # todo : 코드를 구현하라 
         pass
 
 

@@ -34,6 +34,8 @@ class Form(QMainWindow, Ui_MainWindow):
         print('toggled', arg)
 
     def Use_Lang(self, chkbox, status):
+        self.lang.append(chkbox.text()) if status else self.lang.remove(chkbox.text())
+        print(self.lang)
         print(chkbox.text(), status)
 
 

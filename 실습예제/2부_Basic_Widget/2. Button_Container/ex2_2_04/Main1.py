@@ -35,7 +35,16 @@ class Form(QMainWindow, Ui_MainWindow):
 
     def Use_Lang(self, chkbox):
         # Todo : 코드를 작성하시오
-        pass
+        if chkbox.isChecked():
+            self.lang.append(chkbox.text())
+        else:
+            self.lang.remove(chkbox.text())
+
+        self.lang.sort()
+        if (len(self.lang) == 0) :
+            self.lblMsg.setText('나는 사용할 수 있는 언어가 없다.')
+        else:
+            self.lblMsg.setText(f'나는 {", ".join(self.lang)} 언어를 사용할 수 있습니다.')
 
 
 if __name__ == '__main__':

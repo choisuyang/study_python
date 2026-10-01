@@ -29,6 +29,9 @@
     <property name="checked">
      <bool>false</bool>
     </property>
+    <attribute name="buttonGroup">
+     <string notr="true">grpGender</string>
+    </attribute>
    </widget>
    <widget class="QRadioButton" name="radioFemale">
     <property name="geometry">
@@ -42,6 +45,9 @@
     <property name="text">
      <string>여자</string>
     </property>
+    <attribute name="buttonGroup">
+     <string notr="true">grpGender</string>
+    </attribute>
    </widget>
    <widget class="QLabel" name="label">
     <property name="geometry">
@@ -87,6 +93,9 @@
     <property name="text">
      <string>2학년</string>
     </property>
+    <attribute name="buttonGroup">
+     <string notr="true">grpYear</string>
+    </attribute>
    </widget>
    <widget class="QRadioButton" name="radio3">
     <property name="geometry">
@@ -100,6 +109,9 @@
     <property name="text">
      <string>3학년</string>
     </property>
+    <attribute name="buttonGroup">
+     <string notr="true">grpYear</string>
+    </attribute>
    </widget>
    <widget class="QRadioButton" name="radio1">
     <property name="geometry">
@@ -113,6 +125,9 @@
     <property name="text">
      <string>1학년</string>
     </property>
+    <attribute name="buttonGroup">
+     <string notr="true">grpYear</string>
+    </attribute>
    </widget>
    <widget class="QPushButton" name="btnOK">
     <property name="geometry">
@@ -147,4 +162,8 @@
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="grpYear"/>
+  <buttongroup name="grpGender"/>
+ </buttongroups>
 </ui>

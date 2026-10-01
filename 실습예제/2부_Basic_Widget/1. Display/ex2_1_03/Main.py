@@ -18,8 +18,8 @@ class Form(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
 
         pixmap = QPixmap(":/icon/images/setting.png")
-        self.label_2.setPixmap(pixmap)
-        self.label_2.resize(pixmap.size())
+        self.label.setPixmap(pixmap)
+        self.label.resize(pixmap.size())
 
 
 if __name__ == "__main__":

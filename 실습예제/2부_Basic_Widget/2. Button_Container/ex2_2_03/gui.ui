@@ -101,6 +101,9 @@
      <property name="tristate">
       <bool>false</bool>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">buttonGroup</string>
+     </attribute>
     </widget>
     <widget class="QCheckBox" name="chkCpp">
      <property name="geometry">
@@ -117,6 +120,9 @@
      <property name="tristate">
       <bool>false</bool>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">buttonGroup</string>
+     </attribute>
     </widget>
     <widget class="QCheckBox" name="chkJava">
      <property name="geometry">
@@ -133,6 +139,9 @@
      <property name="tristate">
       <bool>false</bool>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">buttonGroup</string>
+     </attribute>
     </widget>
     <widget class="QCheckBox" name="chkPython">
      <property name="geometry">
@@ -149,10 +158,20 @@
      <property name="tristate">
       <bool>false</bool>
      </property>
+     <attribute name="buttonGroup">
+      <string notr="true">buttonGroup</string>
+     </attribute>
     </widget>
    </widget>
   </widget>
  </widget>
  <resources/>
  <connections/>
+ <buttongroups>
+  <buttongroup name="buttonGroup">
+   <property name="exclusive">
+    <bool>false</bool>
+   </property>
+  </buttongroup>
+ </buttongroups>
 </ui>

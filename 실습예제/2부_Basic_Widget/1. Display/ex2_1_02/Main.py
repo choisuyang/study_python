@@ -19,6 +19,10 @@ class Form(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
 
         # Todo : label_3에 pixmap 클래스를 이용하여 그림추가
+        pixmap = QPixmap('../images/setting.png')
+        self.label.setPixmap(pixmap)
+        self.label.resize(pixmap.size())
+        
 
 
 if __name__ == '__main__':

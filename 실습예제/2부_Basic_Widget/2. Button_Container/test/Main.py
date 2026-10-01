@@ -28,13 +28,22 @@ class Form(QMainWindow, Ui_MainWindow):
     def funcCal2(self,b):
         if b.text() == "=":
             # self.text = (str(eval(self.text)))
-            self.label.setText(str(eval(self.text)))
+            try:
+                self.label.setText(str(eval(self.text)))
+            except ZeroDivisionError:
+                print("0으로 나눌수없음")
+            except SyntaxError:
+                self.label.setText("잘못된 수식 입니다")
+            except Exception as e:
+                self.label.setText("오류")
+            self.expr = ''
         elif b.text() =="C":
             self.label.setText('')
             self.text = ''
         elif b.text() == "<-":
             self.text = self.text[0:-1]
             self.label.setText(self.text)
+        
 
 
 if __name__ == '__main__':
