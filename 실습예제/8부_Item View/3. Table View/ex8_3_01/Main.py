@@ -33,7 +33,7 @@ class TableModel(QAbstractTableModel):
     def rowCount(self, index):
         return len(self.contents) - 1
 
-    def columnCount(self, index):
+    def n    (self, index):
         return len(self.contents[0])
 
 
