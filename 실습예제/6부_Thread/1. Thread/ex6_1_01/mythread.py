@@ -7,12 +7,20 @@ class MyThread(QThread):
         super().__init__()
         self.running = False
     # 다음 메서드를 작성하라
+    
     def run(self):
-        pass
+        cnt = 0
+        self.running = True
+        while self.running:
+            self.msleep(100)
+            if cnt == 10:
+                cnt = 0
+                self.send_command.emit(1)
+            cnt += 1
 
     # 다음 메서드를 작성하라
     def stop(self):
-        pass
+        self.running = False
     # 다음 메서드를 작성하라
     def is_running(self):
-        pass
+        return self.running

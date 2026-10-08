@@ -28,14 +28,22 @@ class Form(QMainWindow, Ui_MainWindow):
 
     def show_dialog(self):
         # todo : dlgForm 객체를 생성하여 이름을 넘겨주어 객체 생성
-        dlg = dlgForm() # Todo : 생성자 수정
-
-        dlg.accepted.connect(lambda: self.print_info(dlg.getInfo()))
+        dlg = dlgForm(name = self.editName.text()) # Todo : 생성자 수정
         dlg.open()
+        dlg.accepted.connect(lambda: self.print_info(dlg.getInfo()))
+
+        # r = dlg.exec()
+        # if r == QDialog.Accepted:
+        #     tinfo = dlg.getInfo()
+        #     self.print_info(tinfo)
+        # dlg.accepted.connect(lambda: self.print_info(dlg.getInfo()))
+        # dlg.open()
 
     def print_info(self, tinfo):
         # Todo : 다이얼로그에서 넘겨 받은 tinfo를 main window에 표시
-        pass
+        self.lblNick.setText('닉네임 : ' + tinfo[0] if tinfo[0] else '닉네임 : ')
+        self.lblHobby.setText('취미 : ' + ', '.join(tinfo[1]) if tinfo[1] else '취미 : ')
+        self.lblGender.setText('성별 : ' + tinfo[2] if tinfo[2] else '성별 : ')
 
 
 class dlgForm(QDialog, Ui_Dialog):
@@ -44,21 +52,29 @@ class dlgForm(QDialog, Ui_Dialog):
         super().__init__(parent, flag)
         self.setupUi(self)
         # Todo :  넘어온 name를 line edit에 표시
+        self.editNick.setText(name)
 
     def getNick(self):
         # Todo : 닉네임 리턴
-        nick_name = ''
+        nick_name = self.editNick.text()
         return nick_name
 
     def getHobby(self):
         # Todo : 선택된 취미를 list로 만들어 리턴
         lst_hobby = []
+        for chkbox in self.buttonGroup.buttons():
+            if chkbox.isChecked():
+                lst_hobby.append(chkbox.text())
         return lst_hobby
 
+    # def getGender(self):
+    #     # Todo : 선택된 성별을 문자열로 리턴
+        
     def getGender(self):
-        # Todo : 선택된 성별을 문자열로 리턴
-        gender = ''
-        return gender
+        if self.rdoMale.isChecked():
+            return '남자'
+        else:
+            return '여자'
 
     def getInfo(self):
         r = self.getNick(), self.getHobby(), self.getGender()

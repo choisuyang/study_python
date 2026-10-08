@@ -2,6 +2,7 @@
 	from PyQt5.QtWidgets import QApplication, QMainWindow
 	from PyQt5.QtGui import QPixmap, QImage
 	from PyQt5.QtCore import pyqtSlot
+
 	GUI_FILE_NAME = 'gui'
 	subprocess.run([
 		sys.executable,          

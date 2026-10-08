@@ -28,31 +28,31 @@ class Form(QMainWindow, Ui_MainWindow):
     def globTest(self, btn):
         # 파일명이 test로 끝나는 png파일
         if btn == self.btnTest:
-            pattern =''
+            pattern ='.\\images\\*test.png'
 
         # 2로 시작하고 old로 끝나는 png파일
         elif btn == self.btnOld:
-            pattern =''
+            pattern ='.\\images\\2*old.png'
 
         # menu이미지 중 일련번호 두 번째 수가 1인 png
         elif btn==self.btnMenu:
-            pattern =''
+            pattern ='.\\images\\menu?1*.png'
 
         # 숫자로 시작 하는 png
         elif btn==self.btnNum:
-            pattern =''
+            pattern ='.\\images\\[0-9]*.png'
 
         # 확장자가 png인 파일
         elif btn == self.btnPng:
-            pattern =''
+            pattern ='.\\images\\*.png'
 
         # 확장자가 jpg인 파일
         elif btn == self.btnJpg:
-            pattern =''
+            pattern ='.\\images\\*.jpg'
 
         # 모든 파일
         else:
-            pattern = ''
+            pattern = '.\\images\\*.*'
 
         self.lstFrom.clear()
         l = glob.glob(pattern)

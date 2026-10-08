@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(650, 600)
+        MainWindow.resize(735, 657)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.lblImg = QtWidgets.QLabel(self.centralwidget)
@@ -23,9 +23,17 @@ class Ui_MainWindow(object):
         self.lblImg.setFrameShadow(QtWidgets.QFrame.Raised)
         self.lblImg.setText("")
         self.lblImg.setObjectName("lblImg")
+        self.btnTakePicture = QtWidgets.QPushButton(self.centralwidget)
+        self.btnTakePicture.setGeometry(QtCore.QRect(230, 520, 241, 81))
+        self.btnTakePicture.setObjectName("btnTakePicture")
+        self.label = QtWidgets.QLabel(self.centralwidget)
+        self.label.setGeometry(QtCore.QRect(40, 520, 151, 81))
+        self.label.setText("")
+        self.label.setScaledContents(False)
+        self.label.setObjectName("label")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 650, 19))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 735, 21))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -38,6 +46,7 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        self.btnTakePicture.setText(_translate("MainWindow", "take a picture"))
 
 
 if __name__ == "__main__":

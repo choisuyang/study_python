@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>860</width><height>560</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>가위바위보 게임</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex"><number>0</number></property>
+
+      <!-- ===================== 대시보드 탭 ===================== -->
+      <widget class="QWidget" name="tabDashboard">
+       <attribute name="title"><string>📊 대시보드</string></attribute>
+       <layout class="QVBoxLayout" name="dashLayout">
+        <item>
+         <widget class="QLabel" name="lblDashTitle">
+          <property name="text"><string>나의 전적 요약</string></property>
+          <property name="alignment"><set>Qt::AlignCenter</set></property>
+          <property name="styleSheet"><string notr="true">font-size: 22px; font-weight: bold;</string></property>
+         </widget>
+        </item>
+        <item>
+         <layout class="QHBoxLayout" name="cardLayout">
+          <item>
+           <widget class="QGroupBox" name="boxTotal">
+            <property name="title"><string>총 대결</string></property>
+            <layout class="QVBoxLayout" name="l1">
+             <item>
+              <widget class="QLabel" name="lblTotal">
+               <property name="text"><string>0</string></property>
+               <property name="alignment"><set>Qt::AlignCenter</set></property>
+               <property name="styleSheet"><string notr="true">font-size: 40px; font-weight: bold;</string></property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="boxWins">
+            <property name="title"><string>승리</string></property>
+            <layout class="QVBoxLayout" name="l2">
+             <item>
+              <widget class="QLabel" name="lblWins">
+               <property name="text"><string>0</string></property>
+               <property name="alignment"><set>Qt::AlignCenter</set></property>
+               <property name="styleSheet"><string notr="true">font-size: 40px; font-weight: bold; color: #2e9e4f;</string></property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="boxLosses">
+            <property name="title"><string>패배</string></property>
+            <layout class="QVBoxLayout" name="l3">
+             <item>
+              <widget class="QLabel" name="lblLosses">
+               <property name="text"><string>0</string></property>
+               <property name="alignment"><set>Qt::AlignCenter</set></property>
+               <property name="styleSheet"><string notr="true">font-size: 40px; font-weight: bold; color: #d9534f;</string></property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="boxDraws">
+            <property name="title"><string>무승부</string></property>
+            <layout class="QVBoxLayout" name="l4">
+             <item>
+              <widget class="QLabel" name="lblDraws">
+               <property name="text"><string>0</string></property>
+               <property name="alignment"><set>Qt::AlignCenter</set></property>
+               <property name="styleSheet"><string notr="true">font-size: 40px; font-weight: bold; color: #888888;</string></property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item>
+         <widget class="QLabel" name="lblDashRate">
+          <property name="text"><string>승률 0.0%</string></property>
+          <property name="alignment"><set>Qt::AlignCenter</set></property>
+          <property name="styleSheet"><string notr="true">font-size: 20px; font-weight: bold;</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QProgressBar" name="progressDash">
+          <property name="value"><number>0</number></property>
+          <property name="textVisible"><bool>false</bool></property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="dashSpacer">
+          <property name="orientation"><enum>Qt::Vertical</enum></property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+
+      <!-- ===================== 대결 탭 ===================== -->
+      <widget class="QWidget" name="tabBattle">
+       <attribute name="title"><string>⚔️ 대결</string></attribute>
+       <layout class="QHBoxLayout" name="battleLayout">
+
+        <!-- 왼쪽: 게임 영역 -->
+        <item>
+         <layout class="QVBoxLayout" name="gameLayout">
+          <item>
+           <widget class="QLabel" name="lblGuide">
+            <property name="text"><string>가위, 바위, 보 중 하나를 선택하세요!</string></property>
+            <property name="alignment"><set>Qt::AlignCenter</set></property>
+            <property name="styleSheet"><string notr="true">font-size: 18px; font-weight: bold;</string></property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="versusLayout">
+            <item>
+             <layout class="QVBoxLayout" name="playerCol">
+              <item>
+               <widget class="QLabel" name="lblPlayerName">
+                <property name="text"><string>나</string></property>
+                <property name="alignment"><set>Qt::AlignCenter</set></property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lblPlayer">
+                <property name="text"><string>❔</string></property>
+                <property name="alignment"><set>Qt::AlignCenter</set></property>
+                <property name="styleSheet"><string notr="true">font-size: 72px;</string></property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <widget class="QLabel" name="lblVs">
+              <property name="text"><string>VS</string></property>
+              <property name="alignment"><set>Qt::AlignCenter</set></property>
+              <property name="styleSheet"><string notr="true">font-size: 28px; font-weight: bold; color: #d9534f;</string></property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QVBoxLayout" name="comCol">
+              <item>
+               <widget class="QLabel" name="lblComName">
+                <property name="text"><string>컴퓨터</string></property>
+                <property name="alignment"><set>Qt::AlignCenter</set></property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lblComputer">
+                <property name="text"><string>❔</string></property>
+                <property name="alignment"><set>Qt::AlignCenter</set></property>
+                <property name="styleSheet"><string notr="true">font-size: 72px;</string></property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblResult">
+            <property name="text"><string>결과가 여기에 표시됩니다</string></property>
+            <property name="alignment"><set>Qt::AlignCenter</set></property>
+            <property name="styleSheet"><string notr="true">font-size: 26px; font-weight: bold;</string></property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QHBoxLayout" name="buttonLayout">
+            <item>
+             <widget class="QPushButton" name="btnScissors">
+              <property name="minimumSize"><size><width>0</width><height>70</height></size></property>
+              <property name="text"><string>✌️ 가위</string></property>
+              <property name="styleSheet"><string notr="true">font-size: 20px;</string></property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnRock">
+              <property name="minimumSize"><size><width>0</width><height>70</height></size></property>
+              <property name="text"><string>✊ 바위</string></property>
+              <property name="styleSheet"><string notr="true">font-size: 20px;</string></property>
+             </widget>
+            </item>
+            <item>
+             <widget class="QPushButton" name="btnPaper">
+              <property name="minimumSize"><size><width>0</width><height>70</height></size></property>
+              <property name="text"><string>✋ 보</string></property>
+              <property name="styleSheet"><string notr="true">font-size: 20px;</string></property>
+             </widget>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="lblWinRate">
+            <property name="text"><string>승률 0.0% (0승 0패 0무)</string></property>
+            <property name="alignment"><set>Qt::AlignCenter</set></property>
+            <property name="styleSheet"><string notr="true">font-size: 16px; font-weight: bold;</string></property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QProgressBar" name="progressWinRate">
+            <property name="value"><number>0</number></property>
+            <property name="textVisible"><bool>false</bool></property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+
+        <!-- 오른쪽: 히스토리 -->
+        <item>
+         <widget class="QGroupBox" name="boxHistory">
+          <property name="title"><string>📜 대결 기록</string></property>
+          <property name="minimumSize"><size><width>300</width><height>0</height></size></property>
+          <layout class="QVBoxLayout" name="historyLayout">
+           <item>
+            <widget class="QListWidget" name="listHistory"/>
+           </item>
+           <item>
+            <widget class="QPushButton" name="btnReset">
+             <property name="text"><string>기록 초기화</string></property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

@@ -18,8 +18,8 @@ class Form(QMainWindow, Ui_MainWindow):
         self.setupUi(self)
         self.btnAdd.clicked.connect(self.addMultiItem)
         self.btnRemove.clicked.connect(self.removeSingleItem)
-        self.btnUp.clicked.connect(lambda: self.moveUpDown(-1))
-        self.btnDown.clicked.connect(lambda: self.moveUpDown(1))
+        self.btnUp.clicked.connect(lambda: self.moveUpDown(1))
+        self.btnDown.clicked.connect(lambda: self.moveUpDown(-1))
         self.addList()
 
         self.lstItemFrom.itemSelectionChanged.connect(self.fromDisplayInfo)
